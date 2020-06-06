@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                       https://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!-- this way not work -->
+   <bean id="testA" class="org.springframework.beans.factory.testxml.beanfactory.circular.TestA">
+      <constructor-arg index="0" ref="testB"/>
+   </bean>
+
+	<bean id="testB" class="org.springframework.beans.factory.testxml.beanfactory.circular.TestB">
+		<constructor-arg index="0" ref="testC"/>
+	</bean>
+
+	<bean id="testC" class="org.springframework.beans.factory.testxml.beanfactory.circular.TestC">
+		<constructor-arg index="0" ref="testA"/>
+	</bean>
+
+</beans>

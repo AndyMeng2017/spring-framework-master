@@ -14,8 +14,19 @@ import org.springframework.tests.sample.beans.TestBean;
 public class XmlBeanFactoryTest {
 
 	public static void main(String[] args) {
+		// 单个bean创建
 		BeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("org/springframework/beans/factory/BeanFactoryUtilsTests-root.xml"));
 		TestBean testBean = (TestBean) xmlBeanFactory.getBean("test");
 		System.out.println(testBean.getName());
+
+
+		// 循环依赖bean创建
+		// 参考 org.springframework.beans.factory.FactoryBeanTests 测试类
+//		BeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("org/springframework/beans/factory/FactoryBeanTests-circular.xml"));
+//		TestBean testBean = (TestBean) xmlBeanFactory.getBean("test");
+//		System.out.println(testBean.getName());
+
+
+
 	}
 }

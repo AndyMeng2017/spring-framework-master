@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                       https://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="testA" class="org.springframework.beans.factory.testxml.beanfactory.set.TestA">
+		<property name="testB" ref="testB"/>
+	</bean>
+
+	<bean id="testB" class="org.springframework.beans.factory.testxml.beanfactory.set.TestB">
+		<property name="testC" ref="testC"/>
+	</bean>
+
+	<bean id="testC" class="org.springframework.beans.factory.testxml.beanfactory.set.TestC">
+		<property name="testA" ref="testA"/>
+	</bean>
+
+</beans>
