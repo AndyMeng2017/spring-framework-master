@@ -20,6 +20,9 @@ public class XmlBeanFactoryTest {
 		System.out.println(testBean.getName());
 
 
+
+
+
 		// 循环依赖bean创建
 		// 参考 org.springframework.beans.factory.FactoryBeanTests 测试类
 //		BeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("org/springframework/beans/factory/FactoryBeanTests-circular.xml"));
